@@ -1,0 +1,442 @@
+/* Reset default margin */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.4s ease-in-out;
+}
+
+
+/* Body background */
+
+body {
+    background-color: rgba(72, 72, 151, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+
+/* Main container */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container1 {
+    background: linear-gradient(to bottom, chartreuse, grey, black);
+    color: navy;
+    height: 100vh;
+    width: 100%;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+    /* Smooth fade/slide */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+}
+
+.container1 h1 {
+    padding: 10px;
+    font-size: 40px;
+}
+
+
+/* Header styling */
+
+header {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#a1 {
+    text-decoration: none;
+    font-size: 30px;
+    color: navy;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 30px;
+    color: navy;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background: navy;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* Description section */
+
+.desc {
+    display: flex;
+    gap: 50px;
+    padding: 50px 5%;
+    margin-top: 5%;
+}
+
+.desca {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.desc1a {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.desc1a h2 {
+    font-size: 55px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 2s steps(20, end) 1s forwards;
+}
+
+.desc1a h3 {
+    font-size: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 1.5s steps(30, end) 3s forwards, blink 0.7s step-end infinite 3s;
+}
+
+.desc1a p {
+    font-size: 16px;
+    margin: 10px 0 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 2s steps(60, end) 4.8s forwards, blink 0.7s step-end infinite 4.8s;
+}
+
+
+/* Resume button */
+
+.btn1 button {
+    height: 50px;
+    width: 150px;
+    padding: 10px;
+    color: navy;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid navy;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInButton 5s ease-in forwards 0.5s;
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.btn1 button:hover {
+    background: navy;
+    color: white;
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+
+/* Image styling */
+
+.desc2a {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 350px;
+    width: 350px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+
+/* Image container */
+
+.desc2a img {
+    height: 300px;
+    width: 300px;
+    border: 2px solid navy;
+    border-radius: 50%;
+    margin-left: auto;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInImage 5s ease-in forwards 0.5s;
+    /* 2s delay after text starts */
+}
+
+
+/* Keyframes for image fade-in */
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.desc2a img:hover {
+    transform: scale(1.2) rotate(0deg);
+    box-shadow: 0 0 30px navy;
+}
+
+
+/* About section */
+
+.sabout1 {
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+}
+
+.sabout2 {
+    height: 400px;
+    width: 380px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.sabout2:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.sabout2 img {
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.sabout2 img:hover {
+    transform: scale(1.20) rotate(0deg);
+    /* box-shadow: 0 0 30px navy; */
+}
+
+.sabout3 {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.sabout3 p {
+    font-size: 24px;
+}
+
+.sabout3:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Projects section */
+
+.project2 {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project2 p {
+    font-size: 24px;
+}
+
+.project2 .proj1,
+.proj2,
+.proj3,
+.proj4 {
+    /* flex: 1; */
+    background: rgba(255, 255, 255, 0.1);
+    height: 600px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.project2 .proj1 ul,
+.proj2 ul,
+.proj3 ul,
+.proj4 ul {
+    padding: 20px;
+}
+
+.proj1:hover,
+.proj2:hover,
+.proj3:hover,
+.proj4:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Skills section */
+
+.skill2 {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.skill2 p {
+    font-size: 24px;
+}
+
+.card1,
+.card2,
+.card3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card1 ul,
+.card2 ul,
+.card3 ul {
+    padding: 20px;
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.wskill2 img {
+    height: 200px;
+    width: 300px;
+    margin: auto;
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.wskill2 img:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Contact section */
+
+.contact1 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* padding: 20px; */
+    /* margin-bottom: 60px; */
+    gap: 20px;
+}
+
+.scontact1 {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height: auto;
+    width: 500px;
+    margin-left: 20px;
+    padding: 10px;
+    margin-bottom: 450px;
+}
+
+.scontact1 p {
+    font-size: 24px;
+    ;
+}
+
+.scontact1:hover {
+    transform: scale(1.08);
+}
+
+.contact1 footer {
+    /* margin-bottom: 20px; */
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 2rem;
+    border-radius: 10px;
+    padding: 10px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px navy;
+    }
+    to {
+        text-shadow: 0 0 20px skyblue;
+    }
+}
+
+
+/* Desktop responsiveness */
+
+@media screen and (max-width: 1200px) {
+    .desc {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project2,
+    .skill2 {
+        flex-direction: column;
+    }
+    .sabout1 {
+        flex-direction: column;
+        align-items: center;
+    }
+}
