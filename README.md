@@ -35,5 +35,4 @@ Key Learnings
 
 ---
 
-## 📁 Folder Structure
 
